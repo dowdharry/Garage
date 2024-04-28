@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+  <title>Garage Control</title>
+  <link rel="stylesheet" href="/static/style.css" type="text/css">
+ </head>
+
+ <body>
+  <h1>Edit Account</h1>
+  <div class="container">
+   <form action="/edituser" method="POST">
+    <input class="content" type="text" value="" placeholder="Old Username" name="old_username">
+    <input class="content" type="password" value="" placeholder="Old Password" name="old_password">
+    <input class="content" type="text" value="" placeholder="Old Email" name="old_email">
+    <input class="content" type="text" value="" placeholder="New Username" name="new_username">
+    <input class="content" type="password" value="" placeholder="New Password" name="new_password">
+    <input class="content" type="text" value="" placeholder="New Email" name="new_email">
+    {% with messages = get_flashed_messages()%}
+     {% if messages%}
+      {% for message in messages%}
+       <p>{{message}}</p>
+      {%endfor%}
+     {%endif%}
+    {%endwith%}
+    <input class="btn content" type="submit" value="Edit User">
+   </form>
+   <a class="btn content" href="/users" role="button">Back</a>
+  </div>
+ </body>
+
+</html>

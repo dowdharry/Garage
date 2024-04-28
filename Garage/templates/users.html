@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+  <title>Garage Control</title>
+  <link rel="stylesheet" href="/static/style.css" type="text/css">
+ </head>
+
+ <body>
+  <h1>User Information</h1>
+  <div class="container">
+   {% with messages = get_flashed_messages()%}
+    {% if messages%}
+     {% for message in messages%}
+      <p class="content">{{message}}</p>
+     {%endfor%}
+    {%endif%}
+   {%endwith%}
+   <table class="content" border="0">
+    <thead>
+     <tr>
+      <th>Username</th>
+      <th>Email</th>
+     </tr>
+    </thead>
+    <tbody>
+     {% for user in users %}
+     <tr>
+      <td>{{ users[user].username }}</td>
+      <td>{{ users[user].email }}</td>
+     </tr>
+     {% endfor %}
+    </tbody>
+   </table>
+   <a class="btn content" href="/create" role="button">Create User</a>
+   <a class="btn content" href="/edit" role="button">Edit User</a>
+   <a class="btn content" href="/delete" role="button">Delete User</a>
+   <a class="btn content" href="/control" role="button">Back</a>
+  </div>
+ </body>
+
+</html>

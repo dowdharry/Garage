@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+  <title>Garage Control</title>
+  <link rel="stylesheet" href="/static/style.css" type="text/css">
+ </head>
+
+ <body>
+  <h1>Account Login</h1>
+  <div class="container">
+   <p class="content">Login token has been sent to your email</p> 
+   <form action="/twofauser" method="POST">
+    <input class="content" type="text" value="" placeholder="Username" name="username">
+    <input class="content" type="text" value="" placeholder="Token" name="token">
+    <input class="btn content" type="submit" value="Login">
+   </form>
+   <a class="btn content" href="/login" role="button">Back</a>
+  </div>
+ </body>
+
+</html>

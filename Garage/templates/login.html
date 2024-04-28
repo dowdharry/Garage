@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+  <title>Garage Control</title>
+  <link rel="stylesheet" href="/static/style.css" type="text/css">
+ </head>
+
+ <body>
+  <h1>Account Login</h1>
+  <div class="container">
+   <form action="/loginuser" method="POST">
+    <input class="content" type="text" value="" placeholder="Username" name="username">
+    <input class="content" type="password" value="" placeholder="Password" name="password">
+    {% with messages = get_flashed_messages()%}
+     {% if messages%}
+      {% for message in messages%}
+       <p>{{message}}</p>
+      {%endfor%}
+     {%endif%}
+    {%endwith%}
+    <input class="btn content" type="submit" value="Continue">
+   </form>
+  </div>
+ </body>
+
+</html>

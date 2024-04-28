@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+ <head>
+  <title>Garage Control</title>
+  <link rel="stylesheet" href="/static/style.css" type="text/css">
+ </head>
+
+ <body>
+  <div class="container">
+  <h1 class="content">Garage Control Web Server</h1>
+  {% with messages = get_flashed_messages()%}
+   {% if messages%}
+    {% for message in messages%}
+     <p>{{message}}</p>
+    {%endfor%}
+   {%endif%}
+  {%endwith%}
+  {% if status == True %}
+  <h2 class="content">The garage door is currently closed</h2>
+  <a class="btn content" href="/open" role="button">Open</a>
+  {% else %}
+  <h2 class="content">The garage door is currently open</h2>
+  {% endif %}
+  <a class="btn content" href="/close" role="button">Close</a>
+  <a class="btn content" href="/users" role="button">View Users</a>
+  <a class="btn content" href="/logout" role="button">Logout</a>
+ </div>
+ </body>
+
+</html>
+
